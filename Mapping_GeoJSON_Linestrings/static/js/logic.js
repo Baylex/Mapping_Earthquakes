@@ -57,6 +57,12 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 //   .addTo(map);
 // });
 
+// We create the dark view tile layer that will be an option for our map.
+let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    accessToken: API_KEY
+});
 
 // We create the dark view tile layer that will be an option for our map.
 let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -67,7 +73,7 @@ let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{
 
 // Create a base layer that holds both maps.
 let baseMaps = {
-  "Streets": streets,
+  "Dark Navigation": dark,
   "Satellite Streets": satelliteStreets
 };
 
@@ -86,10 +92,10 @@ L.control.layers(baseMaps).addTo(map);
 
 // Accessing the airport GeoJSON URL
 // let airportData = let torontoData = "https://raw.githubusercontent.com/<GitHub_name>/Mapping_Earthquakes/main/torontoRoutes.json";
-let torontoHoods = "https://raw.githubusercontent.com/Baylex/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/Baylex/Mapping_Earthquakes/main/torontoRoutes.json";
 
 // Grabbing our GeoJSON data.
-d3.json(airportData).then(function(data) {
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.  Skill Drill 13.5.3 add popups to all markers
 L.geoJson(data,{
