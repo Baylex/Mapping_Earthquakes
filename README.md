@@ -17,7 +17,7 @@ UT McCombs Data Boot Camp: Module 8: Mapping Earthquakes with JS &amp; APIs
 
 ![Pic 1](https://github.com/Baylex/Mapping_Earthquakes/blob/main/Images/toggle_options.PNG)
 
-## Creating the may key based on Magnitude:
+## Creating the map key based on Magnitude:
 
 ![Pic 2](https://github.com/Baylex/Mapping_Earthquakes/blob/main/Images/key.PNG)
 
