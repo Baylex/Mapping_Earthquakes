@@ -1,5 +1,5 @@
 # Mapping_Earthquakes
-UT McCombs Data Boot Camp Module 13: Mapping Earthquakes with JS &amp; APIs
+Mapping Earthquakes with JS &amp; APIs
 
 ## Main Objectives: 
 1. Create a branch from the main branch on GitHub.
